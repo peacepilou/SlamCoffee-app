@@ -1,0 +1,42 @@
+<h1 *ngIf="!isPutReview">Ajouter le vôtre !</h1>
+<h1 *ngIf="isPutReview">Editer votre avis!</h1>
+
+<form #addReview='ngForm'>
+  <div>
+    <label for="name">Firstname</label>
+    <input type="text" name="name" [(ngModel)]="review.name" required minlength="3" #name='ngModel'>
+  </div>
+
+  <div *ngIf='name.errors && addReview.submitted'>
+    <span *ngIf='name.errors?.required'>Le prénom est requis</span>
+    <span *ngIf='name.errors?.minlength'>Le prénom doit comporter au moins 3 caractères</span>
+  </div>
+
+  <div>
+    <label for="email">Email</label>
+    <input type="text" name="email" [(ngModel)]="review.mail" required email #email='ngModel'>
+  </div>
+  <div *ngIf='email.errors && addReview.submitted'>
+    <span *ngIf='email.errors?.required'>L'email est requis</span>
+  </div>
+
+  <div>
+    <label for="score">Votre note /5 ?</label>
+    <input type="number" name="score" min="1" max="5" [(ngModel)]="review.score" required score #score='ngModel'>
+  </div>
+  <div *ngIf='score.errors && addReview.submitted'>
+    <span *ngIf='score.errors?.required'>Vous devez attribuer une note</span>
+  </div>
+
+  <div>
+    <label for="description">Expliquez-nous pourquoi</label>
+    <textarea type="description" name="description" [(ngModel)]="review.description" required
+      #description='ngModel'></textarea>
+  </div>
+  <div *ngIf='description.errors && addReview.submitted'>
+    <span *ngIf='description.errors?.required'>Votre avis ne peut se résumer Covid...</span>
+  </div>
+
+  <button *ngIf="!isPutReview" (click)="postReview()">Ajouter mon avis</button>
+  <button *ngIf="isPutReview" (click)="editReview()">Editer mon avis</button>
+</form>

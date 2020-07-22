@@ -5,5 +5,5 @@ export class Menu {
   title: string;
   description: string;
   price: number;
-  reviews: Review[];
+  reviews?: Review[];
 }

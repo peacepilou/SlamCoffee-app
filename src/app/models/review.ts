@@ -1,10 +1,10 @@
 import { Menu } from './menu';
-import { User } from './user';
 
 export class Review {
   id: number;
   description: string;
   score: number;
-  menu: Menu;
-  user?: User;
+  menu?;aux; menus: Menu;
+  name: string;
+  mail?: string;
 }

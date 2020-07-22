@@ -1,0 +1,14 @@
+<button [routerLink]="''">Retour</button>
+
+<p>reviews works!</p>
+<div *ngIf="menu">
+  <div *ngFor="let review of menu.reviews; let i = index">
+    {{review.description}}
+    {{review.score}}
+    {{review.name}}
+    <button (click)="isPutReviewToChild(review.id)">Editer</button>
+    <button (click)="deleteReview(review.id)">Supprimer</button>
+  </div>
+</div>
+
+<app-add-review [isPutReview]="isPutReview" [currentIndex]="currentIndex"></app-add-review>

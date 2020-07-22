@@ -12,10 +12,13 @@ export class MenuService {
 
   constructor(private http: HttpClient) { }
 
-getAll(): Observable<Menu[]> {
-  return this.http.get<Menu[]>(MenuService.BASE_URL);
-}
-getById(id: number) {
-  return this.http.get<Menu>(MenuService.BASE_URL + '/' + id);
-}
+  getAll(): Observable<Menu[]> {
+    return this.http.get<Menu[]>(MenuService.BASE_URL);
+  }
+  getById(id: number) {
+    return this.http.get<Menu>(MenuService.BASE_URL + '/' + id);
+  }
+  post(review: Menu) {
+    return this.http.post(MenuService.BASE_URL, review);
+  }
 }

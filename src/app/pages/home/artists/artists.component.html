@@ -1,0 +1,33 @@
+<div class="container"><br/>
+
+  <div>
+    Style de Slam
+    <select
+            [(ngModel)]="type">
+      <option value="">Tous</option>
+      <option value="moderne">Slam moderne</option>
+      <option value="hip-hop">Slam Hip-Hop</option>
+    </select>
+  </div>
+
+  <br/><br/>
+
+
+  <table>
+    <thead>
+      <th>Date</th>
+      <th>Name</th>
+      <th>Type</th>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let artist of artists | tableFilter: type">
+        <td>{{ artist.date }}</td>
+        <td>{{ artist.name }}</td>
+        <td>{{ artist.type }}</td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
