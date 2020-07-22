@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "frontCkpt4"
+    }
+  },
+  "defaultProject": "frontCkpt4",
+  "cli": {
+    "analytics": false
+  }
 }

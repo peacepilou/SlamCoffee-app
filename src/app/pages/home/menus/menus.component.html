@@ -1,0 +1,18 @@
+<p>menus works!</p>
+<div *ngFor="let menu of menus">
+  {{menu.title}}
+  {{menu.description}}
+  {{menu.price}}
+ <div *ngFor="let review of menu.reviews">
+  {{review.description}}
+  {{review.score}}
+  {{review.name}}
+ </div>
+
+</div>
+<button (click)="sortBestMenu(1)">Ce que nos clients ont préférés</button>
+<div *ngIf="favoritedMenu">
+  {{favoritedMenu.title}}
+  {{favoritedMenu.description}}
+  {{favoritedMenu.price}}
+</div>
