@@ -1,0 +1,33 @@
+.container {
+  background-color: #301603;
+}
+.img-container {
+  background-color: #301603;
+  display: flex;
+  &:hover {
+    background-color: white;
+  }
+}
+img {
+  width: 25px;
+  height: 25px;
+  margin-right: 15px;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  margin:0;
+  padding: 0;
+  a {
+    margin-right: 5%;
+    text-decoration: none;
+  }
+}
+li {
+  color: white;
+  list-style: none;
+  width: max-content;
+  font-size: 30px;
+  padding: 15px;
+}
+

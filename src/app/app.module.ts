@@ -14,6 +14,7 @@ import { FormsModule } from '@angular/forms';
 import { TableFilterPipe } from './pages/home/artists/table-filter.pipe';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
+import { FooterComponent } from './pages/home/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import {MatCardModule} from '@angular/material/card';
     ReviewsComponent,
     AddReviewComponent,
     TableFilterPipe,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
