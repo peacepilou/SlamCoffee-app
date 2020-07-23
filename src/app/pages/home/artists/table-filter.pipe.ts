@@ -7,7 +7,7 @@ import { NgModel } from '@angular/forms';
 })
 export class TableFilterPipe implements PipeTransform {
 
-  transform(list: any[], value: string) {
+  transform(list: Artist[], value: string) {
 
     return value ? list.filter(item => item.type === value) : list;
   }

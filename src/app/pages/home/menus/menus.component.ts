@@ -22,9 +22,11 @@ export class MenusComponent implements OnInit {
   ngOnInit(): void {
     this.menuService.getAll().subscribe(menuDatas => {
       this.menus = menuDatas;
+
     });
     this.reviewService.getAll().subscribe(reviewDatas => {
       this.reviews = reviewDatas;
+
     });
   }
 }

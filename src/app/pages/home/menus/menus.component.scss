@@ -1,0 +1,61 @@
+.title-container {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+h1 {
+  font-size: 45px;
+  border-bottom: 2px dotted #301603;
+}
+.sub-title-container {
+  display: flex;
+  justify-content: center;
+}
+h3 {
+  font-size: 20px;
+  font-weight: 500;
+  border-bottom: 1px dotted white;
+}
+p {
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+}
+.container {
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+.example-card {
+  width: 400px;
+  background-color: #1B1B1B;
+  color: white;
+  margin-left: 10%;
+}
+#card-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+#card-header-price {
+  font-size: 19px;
+  font-weight: 400;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+}
+button {
+  font-size: 20px;
+  padding: 6px 10px;
+  background-color: transparent;
+  border: 1px dotted white;
+  color: white;
+  transition: all linear 0.2s;
+  &:hover {
+    cursor: pointer;
+    background-color: white;
+    color:#301603;
+  }
+}

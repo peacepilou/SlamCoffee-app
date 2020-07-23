@@ -1,0 +1,105 @@
+.container {
+  padding-top: 25px;
+  padding-bottom: 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
+  margin-top: -5%;
+}
+.reviews-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+}
+.add-review-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+img {
+  width: 4%;
+  height: 2%;
+  &:hover {
+    cursor: pointer;
+  }
+}
+h1 {
+  font-size: 45px;
+  border-bottom: 2px dotted #301603;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+h2 {
+  background-color: #301603;
+  padding: 5px;
+  color: white;
+}
+.back-container {
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+.example-card {
+  width: 500px;
+  height: 250px;
+  background-color:#301603;
+  border-radius: 10px;
+  margin: 25px;
+}
+.review-description {
+  text-align: center;
+  padding: 5% 10% 2% 10%;
+
+}
+.review-name {
+  font-style: italic;
+}
+.add-review {
+  padding: 15px;
+  border-radius: 10px;
+  border: dotted 1.5px #301603;
+  height: 60vh;
+}
+ p {
+  font-size: 20px;
+ }
+ .btn {
+   display: flex;
+   justify-content: center;
+   margin-top: -10px;
+   button {
+     font-size: 18px;
+     padding: 6px 10px;
+     background-color: transparent;
+     border: 1px dotted white;
+     color: white;
+     transition: all linear 0.2s;
+     &:hover {
+       cursor: pointer;
+     }
+   }
+ }
+#edit-btn {
+  margin-right: 50px;
+  &:hover {
+  background-color: green;
+  border: 1px dotted green;
+  }
+}
+#delete-btn:hover {
+  background-color: red;
+  border: 1px dotted red;
+}
+.container-add-review-container {
+  display: flex;
+  height: 100vh;
+  width: 40%;
+  margin-left: 10%;
+}

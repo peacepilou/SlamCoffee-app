@@ -1,14 +1,30 @@
-<button [routerLink]="''">Retour</button>
 
-<p>reviews works!</p>
-<div *ngIf="menu">
-  <div *ngFor="let review of menu.reviews; let i = index">
-    {{review.description}}
-    {{review.score}}
-    {{review.name}}
-    <button (click)="isPutReviewToChild(review.id)">Editer</button>
-    <button (click)="deleteReview(review.id)">Supprimer</button>
+<div *ngIf="menu" class="title-container">
+  <div class="back-container">
+    <img src="https://image.flaticon.com/icons/png/512/94/94510.png" id="back-btn" [routerLink]="''">
+  </div>
+  <h1>Les avis de nos clients</h1>
+  <h2>{{menu.title}}</h2>
+</div>
+<div class="container" *ngIf="menu">
+  <div class="reviews-container">
+    <mat-card *ngFor="let review of menu.reviews; let i = index" class="example-card">
+      <mat-card-content>
+        <p class="review-description">"{{review.description}}"</p>
+        <p>Client : {{review.name}}</p>
+        <p>Note : {{review.score}}/5</p>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="btn">
+          <button id="edit-btn" (click)="isPutReviewToChild(review.id)">Editer</button>
+          <button id="delete-btn" (click)="deleteReview(review.id)">Supprimer</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <div class="container-add-review-container">
+    <div class="add-review-container">
+      <app-add-review class="add-review" [isPutReview]="isPutReview" [currentIndex]="currentIndex" (sendisPutReviewToParent)="receiveisPutReviewFromChild($event)"></app-add-review>
+    </div>
   </div>
 </div>
-
-<app-add-review [isPutReview]="isPutReview" [currentIndex]="currentIndex"></app-add-review>

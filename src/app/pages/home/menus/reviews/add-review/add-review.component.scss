@@ -1,0 +1,45 @@
+.title-container {
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  text-align: center;
+  background-color: #301603;
+  padding: 5px;
+  color: white;
+}
+input {
+  width: 95%;
+  padding: 5px 10px;
+  margin-bottom: 15px;
+  border: solid black 1.5px;
+}
+label {
+  font-weight: 500;
+}
+.input-score {
+  width: 100px;
+}
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+button {
+  font-size: 20px;
+  padding: 6px 10px;
+  background-color: #301603;
+  border: 1px dotted white;
+  color: white;
+  transition: all linear 0.2s;
+  &:hover {
+    cursor: pointer;
+    background-color: green;
+    color: white;
+  }
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin: 15px 30px;
+}

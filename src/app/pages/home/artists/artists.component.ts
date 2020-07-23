@@ -10,15 +10,13 @@ import { ArtistService } from 'src/app/shared/artist.service';
 export class ArtistsComponent implements OnInit {
 
   type: string;
-  artists: any[] = [];
+  artists: Artist[] = [];
 
   constructor(private artistService: ArtistService ) { }
 
   ngOnInit(): void {
     this.artistService.getAll().subscribe(datas => {
       this.artists = datas;
-      console.log(this.artists);
-
     });
   }
 

@@ -1,14 +1,42 @@
-<p>menus works!</p>
-<div *ngFor="let menu of menus">
-  {{menu.title}}
-  {{menu.description}}
-  {{menu.price}}
- <div *ngFor="let review of menu.reviews">
-  {{review.description}}
-  {{review.score}}
-  {{review.name}}
+<div class="title-container">
+  <h1>Nos menus</h1>
 </div>
-<button [routerLink]="['/reviews', menu.id]">Plus d'avis</button>
-
+<div class="container">
+  <mat-card *ngFor="let menu of menus" class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <div id="card-header">
+        <mat-card-title>{{menu.title}}</mat-card-title>
+        <div id="card-header-price">
+          <mat-card-subtitle>{{menu.price}}</mat-card-subtitle>
+        </div>
+      </div>
+    </mat-card-header>
+    <img mat-card-image src="https://i.pinimg.com/originals/9d/e4/85/9de48530a30d1c378e6adf582fb8ac4b.jpg">
+    <mat-card-content>
+      <div class="sub-title-container">
+        <h3>Description du menu</h3>
+      </div>
+        <p>{{menu.description}}</p>
+        <div class="sub-title-container">
+          <h3>Les ingrédients</h3>
+        </div>
+        <p>{{menu.ingredients}}</p>
+    </mat-card-content>
+    <div class="sub-title-container">
+      <h3>Ils vous le recommande...</h3>
+    </div>
+    <mat-card-content *ngFor="let review of menu.reviews; let i = index">
+      <p *ngIf="i<3">
+        "{{review.description | slice:0:100}}..."
+        {{review.name}}<br>
+        Note : {{review.score}}/5</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <div class="btn">
+        <button mat-button [routerLink]="['/reviews', menu.id]">Plus d'avis</button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
 </div>
 

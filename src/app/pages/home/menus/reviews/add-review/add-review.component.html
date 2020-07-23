@@ -3,7 +3,7 @@
 
 <form #addReview='ngForm'>
   <div>
-    <label for="name">Firstname</label>
+    <label for="name">Prénom</label>
     <input type="text" name="name" [(ngModel)]="review.name" required minlength="3" #name='ngModel'>
   </div>
 
@@ -21,7 +21,7 @@
   </div>
 
   <div>
-    <label for="score">Votre note /5 ?</label>
+    <label for="score">Votre note sur 5 ?</label>
     <input type="number" name="score" min="1" max="5" [(ngModel)]="review.score" required score #score='ngModel'>
   </div>
   <div *ngIf='score.errors && addReview.submitted'>
@@ -29,14 +29,16 @@
   </div>
 
   <div>
-    <label for="description">Expliquez-nous pourquoi</label>
-    <textarea type="description" name="description" [(ngModel)]="review.description" required
+    <label for="description"></label>
+    <textarea type="description" placeholder="Expliquez-nous pourquoi..." rows="15" cols="60"name="description" [(ngModel)]="review.description" required
       #description='ngModel'></textarea>
   </div>
   <div *ngIf='description.errors && addReview.submitted'>
     <span *ngIf='description.errors?.required'>Votre avis ne peut se résumer Covid...</span>
   </div>
-
+<div class="btn-container">
   <button *ngIf="!isPutReview" (click)="postReview()">Ajouter mon avis</button>
   <button *ngIf="isPutReview" (click)="editReview()">Editer mon avis</button>
+  <button *ngIf="isPutReview" (click)="togglePutReview(false)">Quitter l'édition</button>
+</div>
 </form>

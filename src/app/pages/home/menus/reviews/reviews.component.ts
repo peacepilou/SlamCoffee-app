@@ -27,7 +27,6 @@ export class ReviewsComponent implements OnInit {
       const id = +datas.get('id');
       this.menuService.getById(id).subscribe(menuDatas => {
         this.menu = menuDatas;
-        console.log(this.menu);
       });
     });
   }
@@ -35,9 +34,13 @@ export class ReviewsComponent implements OnInit {
     this.isPutReview = true;
     this.currentIndex = id;
   }
+  receiveisPutReviewFromChild(bolean) {
+    this.isPutReview = bolean;
+  }
   deleteReview(id){
-    console.log(id);
-    this.reviewService.deleteReview(id).subscribe();
-    window.location.reload();
+    if (confirm('Êtes vous sûr de vouloir supprimer cet avis ?')) {
+      this.reviewService.deleteReview(id).subscribe();
+      window.location.reload();
+    }
   }
 }

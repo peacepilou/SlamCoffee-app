@@ -1,10 +1,11 @@
 import { Menu } from './menu';
 
 export class Review {
-  id: number;
-  description: string;
-  score: number;
-  menu?;aux; menus: Menu;
-  name: string;
-  mail?: string;
+
+  public id: number;
+  public description: string;
+  public score: number;
+  public name: string;
+  public menu: Menu;
+  public mail: string;
 }
