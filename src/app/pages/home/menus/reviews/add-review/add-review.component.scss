@@ -8,6 +8,12 @@ h1 {
   padding: 5px;
   color: white;
 }
+p {
+  text-align: center;
+  #title-currently-editing {
+    border-bottom: 2px dotted #301603;
+  }
+}
 input {
   width: 95%;
   padding: 5px 10px;
@@ -38,8 +44,27 @@ button {
     color: white;
   }
 }
+button:disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+  &:hover {
+    cursor: not-allowed;
+  }
+}
+#quit-edition:hover {
+  cursor: pointer;
+  background-color: red;
+  color: white;
+
+}
 .btn-container {
   display: flex;
   justify-content: center;
-  margin: 15px 30px;
+  margin: 30px 30px 0px 30px;
+}
+.error {
+  background-color: rgba(255, 0, 0, 0.459);
+  color: black;
+  padding: 5px;
 }

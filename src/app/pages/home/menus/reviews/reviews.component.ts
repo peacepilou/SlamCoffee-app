@@ -14,6 +14,7 @@ import { Review } from 'src/app/models/review';
 export class ReviewsComponent implements OnInit {
 
   public isPutReview = false;
+  public titleCurrentlyEdited: boolean;
   public currentIndex: number;
   public reviewToChild: Review;
   public menu: Menu;
@@ -30,12 +31,17 @@ export class ReviewsComponent implements OnInit {
       });
     });
   }
-  isPutReviewToChild(id) {
+  isPutReviewToChild(id, title) {
     this.isPutReview = true;
     this.currentIndex = id;
+    this.titleCurrentlyEdited = title;
+
   }
-  receiveisPutReviewFromChild(bolean) {
+  receiveIsPutReviewFromChild(bolean) {
     this.isPutReview = bolean;
+  }
+  receiveTitleCurrentlyEditedFromChild(bolean) {
+    this.titleCurrentlyEdited = bolean;
   }
   deleteReview(id){
     if (confirm('Êtes vous sûr de vouloir supprimer cet avis ?')) {

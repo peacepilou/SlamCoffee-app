@@ -1,44 +1,49 @@
-<h1 *ngIf="!isPutReview">Ajouter le vôtre !</h1>
-<h1 *ngIf="isPutReview">Editer votre avis!</h1>
+<h1 *ngIf="!isPutReview">Ajouter votre avis</h1>
+<h1 *ngIf="isPutReview">Editer votre avis</h1>
+<p *ngIf="titleCurrentlyEdited">En cours d'édition : <span id="title-currently-editing">"{{titleCurrentlyEdited}}"</span></p>
 
-<form #addReview='ngForm'>
+<form (ngSubmit)="onSubmit()" #addReview='ngForm'>
   <div>
     <label for="name">Prénom</label>
-    <input type="text" name="name" [(ngModel)]="review.name" required minlength="3" #name='ngModel'>
-  </div>
+    <input type="text" name="name" [(ngModel)]="review.name" required #name='ngModel'>
 
-  <div *ngIf='name.errors && addReview.submitted'>
-    <span *ngIf='name.errors?.required'>Le prénom est requis</span>
-    <span *ngIf='name.errors?.minlength'>Le prénom doit comporter au moins 3 caractères</span>
+    <div [hidden]="name.valid || name.pristine"
+      class="error">
+      Votre nom est requis
+    </div>
   </div>
 
   <div>
-    <label for="email">Email</label>
-    <input type="text" name="email" [(ngModel)]="review.mail" required email #email='ngModel'>
-  </div>
-  <div *ngIf='email.errors && addReview.submitted'>
-    <span *ngIf='email.errors?.required'>L'email est requis</span>
+    <label for="mail">Email</label>
+    <input type="text" name="mail" [(ngModel)]="review.mail" required #mail='ngModel'>
+
+    <div [hidden]="mail.valid || mail.pristine" class="error">
+      Votre mail est requis
+    </div>
   </div>
 
   <div>
     <label for="score">Votre note sur 5 ?</label>
-    <input type="number" name="score" min="1" max="5" [(ngModel)]="review.score" required score #score='ngModel'>
-  </div>
-  <div *ngIf='score.errors && addReview.submitted'>
-    <span *ngIf='score.errors?.required'>Vous devez attribuer une note</span>
+    <input type="number" name="score" min="1" max="5" [(ngModel)]="review.score" required #score='ngModel'>
+
+    <div [hidden]="score.valid || score.pristine" class="error">
+      Merci d'entrer une valeur
+    </div>
   </div>
 
   <div>
     <label for="description"></label>
     <textarea type="description" placeholder="Expliquez-nous pourquoi..." rows="15" cols="60"name="description" [(ngModel)]="review.description" required
       #description='ngModel'></textarea>
+
+    <div [hidden]="description.valid || description.pristine" class="error">
+      Détaillez-donc !
+    </div>
   </div>
-  <div *ngIf='description.errors && addReview.submitted'>
-    <span *ngIf='description.errors?.required'>Votre avis ne peut se résumer Covid...</span>
+
+  <div class="btn-container">
+    <button type="submit" [disabled]="!addReview.form.valid" *ngIf="!isPutReview" (click)="postReview()">Ajouter mon avis</button>
+    <button type="submit" [disabled]="!addReview.form.valid" *ngIf="isPutReview" (click)="editReview()">Editer mon avis</button>
+    <button type="submit" [disabled]="!addReview.form.valid" *ngIf="isPutReview" (click)="togglePutReviewAndEditing(false)" id="quit-edition">Quitter l'édition</button>
   </div>
-<div class="btn-container">
-  <button *ngIf="!isPutReview" (click)="postReview()">Ajouter mon avis</button>
-  <button *ngIf="isPutReview" (click)="editReview()">Editer mon avis</button>
-  <button *ngIf="isPutReview" (click)="togglePutReview(false)">Quitter l'édition</button>
-</div>
 </form>

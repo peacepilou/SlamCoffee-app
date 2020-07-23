@@ -1,33 +1,51 @@
+<div class="title-container">
+  <h1>Nos artistes</h1>
+</div>
 <div class="container"><br/>
-
-  <div>
-    Style de Slam
-    <select
-            [(ngModel)]="type">
-      <option value="">Tous</option>
-      <option value="moderne">Slam moderne</option>
-      <option value="hip-hop">Slam Hip-Hop</option>
-    </select>
+  <div class="slam-container">
+    <div class="about-paragraph">
+      <h2>Sachez en avance qui sera le poète de la soirée</h2>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia sodales erat, eget semper lacus dictum eget. Curabitur sed suscipit dui, at auctor tortor. Sed felis arcu, molestie in tristique ut, tincidunt vel mi. Vestibulum tincidunt posuere mi, ut porttitor urna consequat nec. Donec facilisis nibh non sollicitudin auctor. Vivamus ullamcorper justo et ligula feugiat tincidunt eget non mauris. Ut euismod ultrices odio sed semper</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia sodales erat, eget semper lacus dictum eget. Curabitur sed suscipit dui, at auctor tortor. Sed felis arcu, molestie in tristique ut, tincidunt vel mi. Vestibulum tincidunt posuere mi, ut porttitor urna consequat nec. Donec facilisis nibh non sollicitudin auctor. Vivamus ullamcorper justo et ligula feugiat tincidunt eget non mauris. Ut euismod ultrices odio sed semper</p>
+    </div>
   </div>
+  <div class="table-container">
+    <div class="sort-table-container">
+      Style de Slam
+      <select
+              [(ngModel)]="type">
+        <option value="">Tous</option>
+        <option value="moderne">Slam moderne</option>
+        <option value="hip-hop">Slam hip-Hop</option>
+        <option value="campagne">Slam campagne</option>
+        <option value="européen">Slam européen</option>
+        <option value="reggae">Slam reggae</option>
+        <option value="espagnol">Slam espagnol</option>
+      </select>
+    </div>
+    <div class="table-listen-container">
+      <br/><br/>
+      <table>
+        <thead>
+          <th>Date (2020)</th>
+          <th>Name</th>
+          <th>Type</th>
+          <th>Ecouter</th>
+        </thead>
 
-  <br/><br/>
-
-
-  <table>
-    <thead>
-      <th>Date</th>
-      <th>Name</th>
-      <th>Type</th>
-    </thead>
-
-    <tbody>
-      <tr *ngFor="let artist of artists | tableFilter: type">
-        <td>{{ artist.date }}</td>
-        <td>{{ artist.name }}</td>
-        <td>{{ artist.type }}</td>
-      </tr>
-    </tbody>
-
-  </table>
-
+        <tbody>
+          <tr *ngFor="let artist of artists | tableFilter: type">
+            <td>{{ artist.date }}</td>
+            <td>{{ artist.name }}</td>
+            <td>{{ artist.type }}</td>
+            <td *ngIf="artist.uploadedSong"><button (click)="toggleIsListenning(true)">écouter un morceau</button></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="listen-music" *ngIf="isListenning">
+        <iframe src="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/784810753&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false&visual=true"></iframe>
+        <button (click)="toggleIsListenning(false)">Fermer</button>
+      </div>
+    </div>
+  </div>
 </div>

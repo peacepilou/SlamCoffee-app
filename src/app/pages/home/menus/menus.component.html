@@ -4,7 +4,6 @@
 <div class="container">
   <mat-card *ngFor="let menu of menus" class="example-card">
     <mat-card-header>
-      <div mat-card-avatar class="example-header-image"></div>
       <div id="card-header">
         <mat-card-title>{{menu.title}}</mat-card-title>
         <div id="card-header-price">
@@ -27,10 +26,10 @@
       <h3>Ils vous le recommande...</h3>
     </div>
     <mat-card-content *ngFor="let review of menu.reviews; let i = index">
-      <p *ngIf="i<3">
-        "{{review.description | slice:0:100}}..."
-        {{review.name}}<br>
-        Note : {{review.score}}/5</p>
+      <p class="review" *ngIf="i<3">
+        "{{review.description | slice:0:100}}..."<br>
+        <span class="review-name-score">{{review.name}} {{review.score}}/5</span>
+      </p>
     </mat-card-content>
     <mat-card-actions>
       <div class="btn">

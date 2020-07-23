@@ -4,7 +4,7 @@
   padding: 50px;
 }
 h1 {
-  font-size: 45px;
+  font-size: 60px;
   border-bottom: 2px dotted #301603;
 }
 .sub-title-container {
@@ -16,15 +16,16 @@ h3 {
   font-weight: 500;
   border-bottom: 1px dotted white;
 }
+
 p {
   padding-left: 10%;
   padding-right: 10%;
   text-align: center;
+  font-size: 16px;
 }
 .container {
   color: white;
   display: flex;
-  justify-content: center;
 }
 .example-card {
   width: 400px;
@@ -34,9 +35,36 @@ p {
 }
 #card-header {
   display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.mat-card-header {
+  display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.mat-card>:first-child, .mat-card-content>:first-child {
+  margin-top: 0;
+}
+.mat-card-subtitle {
+  display: block;
+  margin-bottom: 16px;
+  background-color: white;
+  color: black;
+  width: 25px;
+  font-size: 23px;
+  height: 26px;
+  padding: 5px;
+}
+.mat-card-title {
+  background-color: white;
+  color: black;
+  font-size: 25px;
+  padding: 5px;
 }
 #card-header-price {
   font-size: 19px;
@@ -58,4 +86,18 @@ button {
     background-color: white;
     color:#301603;
   }
+}
+.review {
+  border: 1.5px dashed white;
+  padding: 15px;
+  transition: 0.5s ease-in-out all;
+  &:hover {
+    background-color: white;
+    border: 1.5px dashed black;
+    color: black;
+    transform: scale(1.1);
+  }
+}
+.review-name-score {
+  margin-top: 15px
 }

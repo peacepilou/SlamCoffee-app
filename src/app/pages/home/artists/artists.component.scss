@@ -1,0 +1,122 @@
+.title-container {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+h1 {
+  font-size: 60px;
+  border-bottom: 2px dotted #301603;
+}
+.container {
+  background-color: #301603;
+  color: white;
+}
+.slam-container {
+  display: flex;
+  justify-content: center;
+}
+.about-paragraph {
+  transition: all 0.5s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30%;
+  &:hover {
+    cursor: default;
+  background-color: white;
+    p, h2{
+      color:#301603
+    }
+  }
+}
+p {
+  color: white;
+  text-align: justify;
+  padding: 15px;
+}
+.table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sort-table-container {
+  background-color: white;
+  color: black;
+  padding: 15px;
+  width: 15%;
+  text-align: center;
+  margin-top: 35px;
+  font-size: 18px;
+}
+select {
+  border-radius: 10px;
+  margin-left: 5%;
+  font-size: 18px;
+}
+table {
+  font-size: 18px;
+  border: 1.5px solid white;
+  padding: 15px;
+  margin-bottom: 100px;
+  margin-top: 50px;
+  thead {
+    background-color: white;
+    color: black;
+    font-size: 25px;
+  }
+  td {
+    text-align: center;
+    padding: 10px 40px;
+  }
+  tr {
+    line-height: 30px;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background-color: white;
+      color: black;
+    }
+  }
+}
+.table-listen-container {
+  display: flex;
+  align-items: initial;
+}
+.listen-music {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
+  button:hover {
+    background-color: white;
+    color: black;
+  }
+}
+iframe {
+  transition: 0.5s all ease-in-out;
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: 300px;
+  margin: 1rem;
+  position: relative;
+  width: 300px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  &:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+}
+button {
+  font-size: 18px;
+  padding: 6px 10px;
+  background-color: transparent;
+  border: 1px dotted white;
+  color: white;
+  transition: all linear 0.2s;
+  &:hover {
+    background-color: #301603;
+    color: white;
+    cursor: pointer;
+  }
+}

@@ -11,13 +11,17 @@ export class ArtistsComponent implements OnInit {
 
   type: string;
   artists: Artist[] = [];
+  isListenning = false;
 
-  constructor(private artistService: ArtistService ) { }
+  constructor(private artistService: ArtistService) { }
 
   ngOnInit(): void {
     this.artistService.getAll().subscribe(datas => {
       this.artists = datas;
+      console.log(datas);
     });
   }
-
+  toggleIsListenning(bolean) {
+    this.isListenning = bolean;
+  }
 }

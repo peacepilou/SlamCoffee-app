@@ -3,7 +3,7 @@ import { Review } from 'src/app/models/review';
 import { ReviewService } from 'src/app/shared/review.service';
 import { ActivatedRoute } from '@angular/router';
 import { MenuService } from 'src/app/shared/menu.service';
-import { Menu } from 'src/app/models/menu';
+
 
 @Component({
   selector: 'app-add-review',
@@ -12,11 +12,16 @@ import { Menu } from 'src/app/models/menu';
 })
 export class AddReviewComponent implements OnInit {
 
-  @Input() public isPutReview;
-  @Input() public currentIndex;
+  @Input() public isPutReview: boolean;
+  @Input() public currentIndex: number;
+  @Input() public titleCurrentlyEdited: boolean;
   @Output() public sendisPutReviewToParent: EventEmitter<boolean> = new EventEmitter();
+  @Output() public sendTitleCurrentlyEditedToParent: EventEmitter<boolean> = new EventEmitter();
+
   menuId: number;
   public review: Review = new Review();
+  submitted = false;
+
   constructor(private menuService: MenuService,
               private reviewService: ReviewService,
               private route: ActivatedRoute) { }
@@ -31,12 +36,16 @@ export class AddReviewComponent implements OnInit {
       });
     });
   }
-  togglePutReview(bolean: boolean) {
+  onSubmit() { this.submitted = true; }
+  togglePutReviewAndEditing(bolean) {
     this.isPutReview = bolean;
+    this.titleCurrentlyEdited = bolean;
     this.sendisPutReviewToParent.emit(bolean);
+    this.sendTitleCurrentlyEditedToParent.emit(bolean);
   }
   postReview() {
     this.reviewService.postReview(this.review).subscribe();
+    window.location.reload();
   }
   editReview() {
     this.review.id = this.currentIndex;
@@ -44,5 +53,6 @@ export class AddReviewComponent implements OnInit {
     this.review.menu.reviews = [];
     console.log(this.review);
     this.reviewService.putReview(this.currentIndex, this.review).subscribe();
+    window.location.reload();
   }
 }
