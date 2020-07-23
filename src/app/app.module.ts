@@ -13,6 +13,7 @@ import { AddReviewComponent } from './pages/home/menus/reviews/add-review/add-re
 import { FormsModule } from '@angular/forms';
 import { TableFilterPipe } from './pages/home/artists/table-filter.pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,7 @@ import { TableFilterPipe } from './pages/home/artists/table-filter.pipe';
     ArtistsComponent,
     ReviewsComponent,
     AddReviewComponent,
-    TableFilterPipe
+    TableFilterPipe,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,48 @@
+.title-container {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+h1 {
+  font-size: 45px;
+  border-bottom: 2px dotted #301603;
+}
+h2 {
+  text-align: center;
+  color: white;
+}
+.container {
+  background-color: #301603;
+  .coffee-varities {
+    display: flex;
+    justify-content: center;
+    .img-and-description {
+      width: 30%;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+img {
+  margin-left: 17.5%;
+}
+.coffee-img {
+  width: 400px;
+  height: 400px;
+}
+p {
+  padding-right: 50px;
+  padding-left: 50px;
+  color: white;
+  text-align: center;
+}
+.about-paragraph {
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    cursor: default;
+  background-color: white;
+    p, h2{
+      color:#301603
+    }
+  }
+}

@@ -1,0 +1,53 @@
+.title-container {
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+h1 {
+  font-size: 45px;
+  border-bottom: 2px dotted #301603;
+}
+h2 {
+  color: white;
+  text-align: justify;
+  font-size: 30px;
+}
+img {
+  width: 600px;
+  height: 400px;
+}
+.container {
+  background-color: #301603;
+}
+.about-container {
+  margin: 0px 20% 0px 20%;
+  .fist-about-container {
+    padding-top: 50px;
+    display: flex;
+    .ambient-img{
+      margin-right: 8%;
+    }
+  }
+  .second-about-container {
+    padding: 50px 0px 50px 0px;
+    display: flex;
+    flex-direction: row-reverse;
+    .stage-img {
+      margin-left: 8%;
+    }
+  }
+}
+.about-paragraph {
+  transition: all 0.5s ease-in-out;
+  &:hover {
+    cursor: default;
+  background-color: white;
+    p, h2{
+      color:#301603
+    }
+  }
+}
+p {
+  color: white;
+  text-align: justify;
+}

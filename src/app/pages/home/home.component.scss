@@ -1,0 +1,49 @@
+.container {
+  background-image: url('src/assets/Landing-coffee-4k.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+img {
+  min-width: 10%;
+  min-height: 50vh;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+ul {
+  display: flex;
+  justify-content: center;
+  a {
+    margin-right: 5%;
+    text-decoration: none;
+    li {
+      color: white;
+      background-color: #484643c4;
+      list-style: none;
+      width: max-content;
+      font-size: 30px;
+      border-bottom: 1.5px solid transparent;
+      transition: all .2s ease-in;
+      &:hover {
+        cursor: pointer;
+        border-bottom: 1.5px solid white;
+        background-color: #90908fc4;
+      }
+    }
+  }
+}
+.title-container {
+  padding-top: 200px;
+  padding-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  h1 {
+      margin: 0px;
+      font-size: 120px;
+      color: white;
+      font-weight: 500;
+      letter-spacing: 9px;
+      background-color: #484643c4;
+  }
+}
+
