@@ -1,6 +1,6 @@
 # SlamCoffee
 
-I had 2 days to create a fullstack project. For the backend, I used Java (Spring/JPA/Hibernate) in order to create a RestApi. For frontend, I used Angular.
+I had 2 days to create a fullstack project. For the backend, I used Java (Spring/JPA/Hibernate) in order to create a RestApi. For the frontend, I used Angular.
 This frontend is currently online and hosted by Fiebase : https://checkpoint4-5a164.web.app/
 
 I still haven't hosted my backend so my frontend is currlently pointing on localhost:8080. I you want to have the whole view of this project, please clone my backend repository : https://github.com/peacepilou/SlamCoffee-api. Until backed is deployed, you shloud know how spring/jpa/hibernate works...
