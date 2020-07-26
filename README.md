@@ -5,7 +5,7 @@ This frontend is currently online and hosted by Fiebase : https://checkpoint4-5a
 
 I still haven't hosted my backend so my frontend is currlently pointing on localhost:8080. I you want to have the whole view of this project, please clone my backend repository : https://github.com/peacepilou/SlamCoffee-api. Until backend is deployed, you shloud know how spring/jpa/hibernate works...
 
-Step 1 : create a database with the name "trainingChkpt4"
+Step 1 : create a database with the name "trainingChkpt4"<br>
 Step 2 : be careful to the application.properties : maybe you should point your localhost on a different port than 3306 (depending on how you've created your mysql local instance)
 Step 3 : run the command "mvn-spring-boot:run"
 
